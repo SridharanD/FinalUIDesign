@@ -36,7 +36,7 @@
         </md-field>
     </div>
     
-    <md-button class="md-raised md-primary">Download Config File</md-button>
+    <md-button class="md-raised md-primary" v-on:click="Download()">Download Config File</md-button>
 
 
 </md-card-content>
@@ -81,7 +81,7 @@ created(){
    axios.get('http://localhost:6060/api/Home/getClientName')
           .then((res)=>{
            this.info=res.data;
-           console.log(this.info)
+           //console.log(this.info)
         }
         )
        
@@ -91,7 +91,7 @@ created(){
    
     Download:function(){
         this.details=this.infodetails.filter(x=> x.deviceName== this.devName);
-        console.log("this is the sample",this.details);
+        //console.log("this is the sample",this.details);
         
         // var m = module.globeDeployment
         // m = this.details
@@ -116,7 +116,7 @@ maxHeight: "73",
 };`
 
 
-      var all = new datamodel();
+      //var all = new datamodel();
       // all.globeIdentification = this.details[0].deviceName;
       // all.globeDeployment = this.details[0].clientName+" "+this.details[0].locationName;
       // all.urlPrereg = "https://globecheckportal-prod-api.azurewebsites.net/api/v1/Desktop/"+this.details[0].clientID+'~'+this.details[0].deviceID+"/";
@@ -126,8 +126,8 @@ maxHeight: "73",
       let link = document.createElement('a')
       link.href = window.URL.createObjectURL(file)
       link.download = 'active.config.js'
-      link.click(all)
-      console.log("answer",all)
+      link.click()
+      //console.log("answer",all)
 
     },
 
