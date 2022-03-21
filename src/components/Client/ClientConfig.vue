@@ -36,7 +36,7 @@
         </md-field>
     </div>
     
-    <md-button class="md-raised md-primary" v-on:click="Download()">Download Config File</md-button>
+    <md-button class="md-raised md-primary" v-on:click="Download()">Download</md-button>
 
 
 </md-card-content>
@@ -145,7 +145,7 @@ watch:{
            },
 
     OrgLocation(){
-        return this.details=this.infodetails;
+        return this.details=this.infodetails.filter(x=> x.locationName== this.OrgLocation);
     },
 
 },  
